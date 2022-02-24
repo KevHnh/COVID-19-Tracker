@@ -4,6 +4,7 @@ import { MenuItem, FormControl, Select, Card, CardContent } from "@material-ui/c
 import { sortData } from "./util";
 import InfoBox from "./InfoBox";
 import Table from "./Table";
+import Articles from "./Articles";
 
 function App() {
   const [country, setInputCountry] = useState("worldwide");
@@ -76,7 +77,7 @@ function App() {
           <InfoBox title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths} />
         </div>
         <div className="app__articles">
-          Articles Go Here
+          <Articles></Articles>
         </div>
       </div>
 
