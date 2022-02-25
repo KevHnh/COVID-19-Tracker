@@ -98,9 +98,10 @@ function App() {
           <InfoBox title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths} />
         </div>
         <div className="app__articles">
-          <h1 className="article_title">Recent Articles About COVID-19 
-            <a className="article_sub">click title to read article</a>
-          </h1>
+          <div className="labels">
+            <h1 className="article_title">Recent Articles About COVID-19</h1> 
+            <h1 className="article_sub">click title to read article</h1>
+          </div>
           <Articles articles={articleData}></Articles>
         </div>
       </div>

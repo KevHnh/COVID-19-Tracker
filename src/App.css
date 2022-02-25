@@ -49,14 +49,21 @@ body {
   margin-top: 1rem;
 }
 
+.labels {
+  padding-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .article_title {
-  color:white;
-  padding-top: 20px;
+  color: white;
+  font-size: 1.5rem;
 }
 
 .article_sub {
-  display: flex;
-  flex-direction: row;
+  color: white;
+  font-size: 1.5rem;
 }
 
 @media (max-width: 990px) {
@@ -67,9 +74,4 @@ body {
     margin-top: 20px;
     max-height: 660px;
   }
-}
-
-.article_sub {
-  color: white;
-  margin-left: 800px;
 }
