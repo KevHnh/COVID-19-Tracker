@@ -24,7 +24,7 @@ function App() {
 
   useEffect(() => {
     const getArticlesData = async () => {
-      fetch("https://newsdata.io/api/1/news?apikey=pub_4932a4409af547b9e1996083c51dd4eccdec&q=corona&language=en")
+      fetch("https://newsdata.io/api/1/news?apikey=pub_4932a4409af547b9e1996083c51dd4eccdec&q=covid&language=en")
       .then((response) => response.json())
       .then((data) => {
         const articles = data.results.map((article) => ({
