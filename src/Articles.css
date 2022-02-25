@@ -1,0 +1,41 @@
+.article_container {
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 20px;
+  overflow-y: scroll;
+  height: 600px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  margin-left: 20px;
+  font-size: 1.3rem;
+}
+
+h1 {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  font-size: 1.3rem;
+}
+
+
+
+.title:hover {
+  text-decoration: underline;
+}
+
+.country {
+  margin-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title_container {
+    margin-top: 15px;
+}

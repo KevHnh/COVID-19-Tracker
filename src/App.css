@@ -3,13 +3,13 @@
 }
 
 body {
-  background-color: #f5f6fa;
+  background-color: #1f1f1f;
 }
 
 .app {
   display: flex;
   justify-content: space-evenly;
-  background-color: #f5f6fa;
+  background-color: #1f1f1f;
   padding: 20px;
 }
 
@@ -25,7 +25,7 @@ body {
 }
 
 .app__header > h1 {
-  color: #fc3c3c;
+  color: white;
   font-size: 2rem;
 }
 
@@ -49,6 +49,16 @@ body {
   margin-top: 1rem;
 }
 
+.article_title {
+  color:white;
+  padding-top: 20px;
+}
+
+.article_sub {
+  display: flex;
+  flex-direction: row;
+}
+
 @media (max-width: 990px) {
   .app {
     flex-direction: column;
@@ -57,4 +67,9 @@ body {
     margin-top: 20px;
     max-height: 660px;
   }
+}
+
+.article_sub {
+  color: white;
+  margin-left: 800px;
 }

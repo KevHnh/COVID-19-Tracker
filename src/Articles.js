@@ -1,26 +1,32 @@
-import React, { useState, useEffect } from "react";
-import './Articles.css'
+import React from 'react'
+import "./Articles.css"
 
-function Articles() {
-  const [data, setData] = useState([]);
-
-  const apiGet = () => {
-      fetch("https://newsdata.io/api/1/news?apikey=pub_48889ac4414b11d29ad9bc606ed043d4e5aa&q=corona&language=en")
-      .then((response) => response.json())
-      .then((json) => {
-          console.log(json)
-          setData(json)
-      });
-  };
-
+function Articles({ articles }) {
   return (
-    <div>
-        My API <br />
-        <button onClick={apiGet}>Fetch API</button>
-        <br />
-        <pre>{JSON.stringify(data, null, 2)}</pre>
+    <div className="article">
+      <div className="article_container">
+      {articles.map((article) => (
+        <div className="articles_individual">
+          <div className="container">
+            <a className="title_container" href={article.link}><b>Title:&nbsp;</b><h1 className='title'>{article.title}</h1></a>
+          </div>
+          <div className="container">
+            <a className="author"><b>Author:&nbsp;</b>{article.author}</a>
+          </div>
+          <div className="container">
+            <a className ="date"><b>Date Published:&nbsp;</b>{article.datePub}</a>
+          </div>
+          <div className="container">
+            <a className="source"><b>Source:&nbsp;</b>{article.source}</a>
+          </div>
+          <div className="container">
+            <a className="country"><b>Country:&nbsp;</b>{article.country}</a>
+          </div>
+        </div>
+      ))}
+      </div>
     </div>
-  )
+  );
 }
 
 export default Articles

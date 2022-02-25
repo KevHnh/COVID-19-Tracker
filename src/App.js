@@ -11,6 +11,8 @@ function App() {
   const [countryInfo, setCountryInfo] = useState({});
   const [countries, setCountries] = useState([]);
   const [tableData, setTableData] = useState([]);
+  const [articleData, setArticleData] = useState([]);
+  const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     fetch("https://disease.sh/v3/covid-19/all")
@@ -19,6 +21,26 @@ function App() {
         setCountryInfo(data);
       });
   }, []);
+
+  useEffect(() => {
+    const getArticlesData = async () => {
+      fetch("https://newsdata.io/api/1/news?apikey=pub_4932a4409af547b9e1996083c51dd4eccdec&q=corona&language=en")
+      .then((response) => response.json())
+      .then((data) => {
+        const articles = data.results.map((article) => ({
+          title: article.title,
+          link: article.link,
+          author: article.creator,
+          datePub: article.pubDate,
+          source: article.source_id,
+          country: article.country,
+        }));
+        setArticles(data);
+        setArticleData(articles);
+      });
+    };
+    getArticlesData();
+  }, [])
 
   useEffect(() => {
     const getCountriesData = async () => {
@@ -34,7 +56,6 @@ function App() {
           setTableData(sortedData);
         });
     };
-
     getCountriesData();
   }, []);
 
@@ -77,7 +98,10 @@ function App() {
           <InfoBox title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths} />
         </div>
         <div className="app__articles">
-          <Articles></Articles>
+          <h1 className="article_title">Recent Articles About COVID-19 
+            <a className="article_sub">click title to read article</a>
+          </h1>
+          <Articles articles={articleData}></Articles>
         </div>
       </div>
 
